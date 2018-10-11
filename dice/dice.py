@@ -9,9 +9,7 @@ global score1
 global score2
 global counter
 
-score1 = 0
-score2 = 0
-counter = 5
+
 
 
 def score():
@@ -31,7 +29,7 @@ def score():
     elif(score1 < score2):
         score = open("score.txt","a")
         score.write(score2)
-        score.write()
+        score.write(" ")
         score.write(name2)
         score.write("\n")
         score.close()
@@ -81,12 +79,12 @@ def main():
             elif dicetot in range(10,12):
                 score2 += 7
             elif dicetot in range(13,18):
-                score1 += 9
+                score2 += 9
 
             sleep(1)
             print(name2,"`s score is now",score2)
             counter -=1
-
+            sleep(1)
 
         def player1():
             global score1
@@ -120,6 +118,7 @@ def main():
 
             sleep(1)
             print(name1,"`s score is now",score1)
+            sleep(1)
 
             player2()
 
@@ -129,7 +128,6 @@ def main():
         if(score1 == score2):
             player1()
         else:
-            score()
             end()
 
 def start():
@@ -144,6 +142,9 @@ def start():
 
 
 def login():
+    global score1
+    global score2
+    global counter
     error = 0
     running = True
 
@@ -202,6 +203,9 @@ def login():
                         sleep(1)
                         quit()
                 else:
+                    score1 = 0
+                    score2 = 0
+                    counter = 5
                     start()
 
                         
