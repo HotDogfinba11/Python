@@ -10,7 +10,6 @@ global score2
 global counter
 
 
-
 def score():
     global score1
     global score2
@@ -46,6 +45,12 @@ def end():
         print(name2,"got a higher score than",name1,"with",score2,"points")
         score()
 
+    again = input("Want to play again? Y/N>>>\n")
+    again = again.lower()
+    if (again == "y"):
+        start()#runs def player1 if input is y
+    else:
+        print("Thanks for playing")
 
 def main():
     while counter != 0:
@@ -216,6 +221,5 @@ def login():
                     counter = 5
                     start()
 
-                        
-
+                
 login()
