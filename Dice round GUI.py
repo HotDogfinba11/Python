@@ -32,16 +32,16 @@ def game():
             if(rounds == 5):
                 pr1 = (name1.get(),"got ",score1," first round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=1, column=1)
-            if(rounds == 4):
+            elif(rounds == 4):
                 pr1 = (name1.get(),"got ",score1," second round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=3, column=1)
-            if(rounds == 3):
+            elif(rounds == 3):
                 pr1 = (name1.get(),"got ",score1,"third round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=5, column=1)
-            if(rounds == 2):
+            elif(rounds == 2):
                 pr1 = (name1.get(),"got ",score1," fourth round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=7, column=1)
-            if(rounds == 1):
+            elif(rounds == 1):
                 pr1 = (name1.get(),"got ",score1," last round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=9, column=1)
 
@@ -66,16 +66,16 @@ def game():
                 if(rounds == 5):
                     pr1 = (name2.get(),"got ",score2," first round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=2, column=1)
-                if(rounds == 4):
+                elif(rounds == 4):
                     pr1 = (name2.get(),"got ",score2," second round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=4, column=1)
-                if(rounds == 3):
+                elif(rounds == 3):
                     pr1 = (name2.get(),"got ",score2,"third round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=6, column=1)
-                if(rounds == 2):
+                elif(rounds == 2):
                     pr1 = (name2.get(),"got ",score2," fourth round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=8, column=1)
-                if(rounds == 1):
+                elif(rounds == 1):
                     pr1 = (name2.get(),"got ",score2," last round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=10, column=1)
 
