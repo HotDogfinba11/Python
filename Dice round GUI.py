@@ -10,7 +10,7 @@ def game():
     rounds = 5
 
     gameui = tk.Tk()
-    gameui.geometry("400x200")
+    gameui.geometry("400x300")
     gameui.title("Dice")
     
     while(rounds > 0):
@@ -32,16 +32,16 @@ def game():
             if(rounds == 5):
                 pr1 = (name1.get(),"got ",score1," first round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=1, column=1)
-            elif(rounds == 4):
+            if(rounds == 4):
                 pr1 = (name1.get(),"got ",score1," second round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=3, column=1)
-            elif(rounds == 3):
+            if(rounds == 3):
                 pr1 = (name1.get(),"got ",score1,"third round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=5, column=1)
-            elif(rounds == 2):
+            if(rounds == 2):
                 pr1 = (name1.get(),"got ",score1," fourth round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=7, column=1)
-            elif(rounds == 1):
+            if(rounds == 1):
                 pr1 = (name1.get(),"got ",score1," last round")
                 labelName1 = tk.Label(gameui, text=pr1).grid(row=9, column=1)
 
@@ -66,28 +66,38 @@ def game():
                 if(rounds == 5):
                     pr1 = (name2.get(),"got ",score2," first round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=2, column=1)
-                elif(rounds == 4):
+                if(rounds == 4):
                     pr1 = (name2.get(),"got ",score2," second round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=4, column=1)
-                elif(rounds == 3):
+                if(rounds == 3):
                     pr1 = (name2.get(),"got ",score2,"third round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=6, column=1)
-                elif(rounds == 2):
+                if(rounds == 2):
                     pr1 = (name2.get(),"got ",score2," fourth round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=8, column=1)
-                elif(rounds == 1):
+                if(rounds == 1):
                     pr1 = (name2.get(),"got ",score2," last round")
                     labelName1 = tk.Label(gameui, text=pr1).grid(row=10, column=1)
 
                 rounds -=1
                 player1 = True
 
+    result = open("result.txt", "a")
     if(score1 > score2):
         pr1 = (name1.get(),"won with",score1,"points")
         labelName1 = tk.Label(gameui, text=pr1).grid(row=10, column=1)
-    else:
+        result.write(str(name1.get()))
+        result.write(" ")
+        result.write(str(score1))
+        result.write("\n")
+    if(score2 > score1):
         pr1 = (name2.get(),"won with",score2,"points")
-        labelName1 = tk.Label(gameui, text=pr1).grid(row=10, column=1)      
+        labelName1 = tk.Label(gameui, text=pr1).grid(row=10, column=1)
+        result.write(str(name2.get()))
+        result.write(" ")
+        result.write(str(score2))
+        result.write("\n")
+    result.close()
     
 def signin():
     if(school.get() == "light hall"):
